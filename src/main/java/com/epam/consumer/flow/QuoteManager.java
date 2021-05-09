@@ -24,7 +24,9 @@ public class QuoteManager {
 
         Quote q = reader.read(file);
         String json = convertor.convert(q);
-        saver.save(json, file.getName());
+
+        Thread t1 = new Thread(() -> saver.save(json, file.getName()));
+        t1.start();
 
     }
 

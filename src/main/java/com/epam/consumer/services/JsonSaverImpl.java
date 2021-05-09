@@ -7,7 +7,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 
-public class JsonSaverImpl implements JsonSaver{
+public class JsonSaverImpl implements JsonSaver {
     @InjectValueFromProperties("consumer_output_location")
     private String path;
 
