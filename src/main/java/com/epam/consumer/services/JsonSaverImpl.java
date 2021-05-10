@@ -5,6 +5,7 @@ import lombok.SneakyThrows;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.ObjectOutputStream;
 
 public class JsonSaverImpl implements JsonSaver {
@@ -15,15 +16,13 @@ public class JsonSaverImpl implements JsonSaver {
     @Override
     public void save(String json, String fileName) {
 
-        String filePath = path + fileName;
+        String filePath = path + fileName + ".json";
 
         File file = new File(filePath);
-        file.createNewFile();
 
-        FileOutputStream fos = new FileOutputStream(file);
-        ObjectOutputStream oos = new ObjectOutputStream(fos);
-
-        oos.writeObject(json);
-        oos.close();
+        FileWriter writer = new FileWriter(file);
+        writer.write(json);
+        writer.flush();
+        writer.close();
     }
 }
