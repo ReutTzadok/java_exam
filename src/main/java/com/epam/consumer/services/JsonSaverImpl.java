@@ -4,9 +4,7 @@ import com.epam.common.services.InjectValueFromProperties;
 import lombok.SneakyThrows;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
-import java.io.ObjectOutputStream;
 
 public class JsonSaverImpl implements JsonSaver {
     @InjectValueFromProperties("consumer_output_location")
